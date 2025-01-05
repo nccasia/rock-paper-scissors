@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+html {
+  font-size: 62.5%;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+.custom-modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  background: #4d4e54;
+  box-shadow: 0 0 10px rgba(90, 80, 80, 0.5);
+}
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
+}
+
+.show-flex {
+  display: flex !important;
+}
+.hide {
+  display: none !important;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.toast-custom {
+  width: 300px;
+}
+.toast-header-custom {
+  background-color: #317626;
+  font-size: 16px;
+  color: white;
+  line-height: 1;
+}
+.toast-body-custom {
+  background-color: #19540fe8;
+  font-size: 15px;
+  color: white;
+}
+.toast-custom.error .toast-header-custom {
+  background-color: #ff0000;
+}
+.toast-custom.error .toast-body-custom {
+  background-color: #ff0000;
+}
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; /* Đặt độ rộng phù hợp */
+  display: block;
+}

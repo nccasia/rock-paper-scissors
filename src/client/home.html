@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/room.css" />
+  </head>
+  <body>
+    <div class="room-page-wrapper">
+      <div class='loading-box'>
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3" style='z-index: 1000000;'>
+        <div id="myToast" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header toast-header-custom">
+            <!-- <img src="https://via.placeholder.com/20" class="rounded me-2" alt="Icon"> -->
+            <strong class="me-auto" id='toastHeader'>Bootstrap</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body toast-body-custom" id='toastMessage'>
+            Hello, world! This is a toast message.
+          </div>
+        </div>
+      </div>
+      <div class="room-section">
+        <div class="room-section-header">
+          <div class="header-left">
+            <span class="header-button create-button" type="button" data-bs-toggle="modal" data-bs-target="#modal-create-room">
+              <img class="room-header-icon" src="./assets/images/plus.png" alt="" />
+            </span>
+            <span class="header-button search-button" type="button" data-bs-toggle="modal" data-bs-target="#modal-show-game">
+              <img class="room-header-icon" src="./assets/images/magnifier.png" alt="" />
+            </span>
+            <span class="header-button online-button hide" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+              <img class="room-header-icon" src="./assets/images/menu.png" alt="" />
+            </span>
+            <span class="header-button leave-button hide" onclick='leaveRoom()' type="button" >
+              <img class="room-header-icon" src="./assets/images/turn-off.png" alt="" />
+            </span>
+          </div>
+          <div class="header-right">
+            <div class="coin-box">
+              <img class="coin-icon" src="./assets/images/coin.png" alt="" />
+              <span class="coin-text">1000</span>
+            </div>
+            <div class="account-box">
+              
+            </div>
+          </div>
+        </div>
+        <div id='home-content' class='content active'>
+          <div class="row room-list"></div>
+        </div>
+        <div id='room-content' class="content ">
+          <div class='game-section'>
+            <div class='game-members'> </div>
+            <div class='start-game'>
+              <button class='btn-start-game'>START</button>
+            </div>
+            <div class='footer-game'>
+              <div class="room-info-box">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="user-section w-100 h-100">
+          <h5 class="user-section-header text-center">ONLINE</h5>
+          <div class="user-list"></div>
+        </div>
+      </div>
+      <div class='modal-section'>        
+        <div id="modal-create-room-root"></div>
+        <div id="modal-search-room-root"></div>
+        <div id="modal-start-round-root"></div>
+        <div id="modal-show-game-root"></div>
+        <div id='modal-ready-game-root'></div>
+      </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src='./assets/javascript/load-component.js'></script>
+    <script src="./assets/javascript/mezon-web-sdk.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./assets/javascript/client.js"></script>
+    <script src="./assets/javascript/user-logic.js"></script>
+    <script src="./assets/javascript/room-logic.js"></script>
+    <script src="./assets/javascript/stream-logic.js"></script>
+    <script src="./assets/javascript/game-logic.js"></script>
+  </body>
+</html>
